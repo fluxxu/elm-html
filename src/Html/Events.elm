@@ -105,9 +105,9 @@ targetValue =
 {-| A `Json.Decoder` for grabbing `event.target.checked` from the triggered
 event. This is useful for input event on checkboxes.
 
-    onInput : Signal.Address a -> (Bool -> a) -> Attribute
-    onInput address contentToValue =
-        on "input" targetChecked (\bool -> Signal.message address (contentToValue bool))
+    onChange : Signal.Address a -> (Bool -> a) -> Attribute
+    onChange address contentToValue =
+        on "change" targetChecked (\bool -> Signal.message address (contentToValue bool))
 -}
 targetChecked : Json.Decoder Bool
 targetChecked =
